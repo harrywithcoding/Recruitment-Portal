@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular-route.js"></script>
+
+    <script src="../App.js"></script>
+    <script src="LoginController.js"></script>
+    <script src="LoginService.js"></script>
+</head>
+
+<body ng-app="loginApp" >
+
+    <div class="login-container" ng-controller="LoginController">
+
+
+        <form ng-show="showLogin">
+            <h2>Login</h2>
+            <input type="text" id="username" name="username" placeholder="Username or Email" ng-model="username" required>
+            <input type="password" id="password" name="password" placeholder="Password" ng-model="password" required>
+            <button type="button" ng-click="login()">Login</button>
+        </form>
+
+        <form ng-show="showRegister">
+            <h2>Register</h2>
+            <input type="text" id="newUsername" name="newUsername" placeholder="New Username or Email" ng-model="NewUser" required>
+            <input type="password" id="newPassword" name="newPassword" placeholder="New Password" ng-model="newPassword" required>
+            <button type="button" ng-click="register()">Register</button>
+        </form>
+
+        <a href="#" class="forgot-password">Forgot Password?</a>
+
+        <a href="#" ng-click="toggleLogin()" ng-show="showRegister" class="register">Back to Login</a>
+        <a href="#" ng-click="toggleRegister()" ng-show="showLogin" class="register">Register</a>
+    </div>
+
+</body>
+
+</html>
